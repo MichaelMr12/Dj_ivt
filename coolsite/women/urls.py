@@ -7,4 +7,6 @@ urlpatterns = [
     path('', index),
     path('cat/', categorys),
     path('cat/<int:cat_id>/', category),
+
+
 ]
