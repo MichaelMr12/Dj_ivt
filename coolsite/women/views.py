@@ -1,14 +1,16 @@
 from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.shortcuts import render, redirect
 
-
 #  для хранения представлений
 # Create your views here.
+menu = ['О сайте', 'Добавить статью', 'Обратная связь', 'Войти']
+
 
 def index(request):
-    res = request.GET
-    print(request.GET)
-    return HttpResponse(f'Главная страница основого приложения<br> {dict(res)}')
+    data = {'title': 'Главная страница',
+            'menu': menu,
+            }
+    return render(request, 'women/index.html', context=data)
 
 
 def categorys(request):
@@ -23,6 +25,9 @@ def category(request, cat_id):
     return HttpResponse(f'<h1> Номер категории - </h1> <br> {cat_id}')
 
 
-def pageNotFound(request, exception):
+def year_archive(request, year):
+    return HttpResponse(f'<h1> Год такой то - </h1> <br> {year}')
 
+
+def pageNotFound(request, exception):
     return HttpResponseNotFound(f'<h1> страница не найдена <br>😢</h1> <br> {exception}')
