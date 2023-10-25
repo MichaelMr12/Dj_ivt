@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{title}}</title>
-</head>
-<body>
-<h1>{{title|cut:" "|cut:"с"}}</h1>
-<p>{{menu}}</p>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+
+<ul>
+    {% for p in posts %}
+    <li>
+        <h2> {{p.FIO}}</h2>
+        <p> {{p.interesting }} </p>
+        {% if not forloop.last %}
+        <hr>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}
