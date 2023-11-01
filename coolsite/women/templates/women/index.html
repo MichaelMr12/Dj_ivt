@@ -1,17 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<ul>
-    {% for p in posts %}
-    <li>
-        <h2> {{p.FIO}}</h2>
-        <p> {{p.interesting }} </p>
-        {% if not forloop.last %}
-        <hr>
-        {% endif %}
-    </li>
-    {% endfor %}
-</ul>
-
-
+{% include 'includes/nav.html' only %}
+<h2> начало </h2>
+{% include 'includes/nav.html' only with year=2023 %}
+<h1>{{title}}</h1>
+{% include 'includes/nav.html' %}
 {% endblock %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+<body>
+
+
+<ul>
+    {% for p in posts %}
+    <li>
+        <h2>{{p.FIO}}</h2>
+        <p>{{p.intresting}}</p>
+        <p><a href="{%  url 'post' p.id %}"> Читать пост</a></p>
+        {% if not forloop.last %}
+        <hr>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
