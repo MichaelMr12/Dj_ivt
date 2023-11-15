@@ -26,3 +26,6 @@ python manage.py makemigrations создание миграций
 python manage.py sqlmigrate women 0001   просмотр sql запроса миграции
 python manage.py migrate
 """
+"""
+python manage.py shell_plus --print-sql  улучшенная консоль
+"""
