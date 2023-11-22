@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{title}}</h1>
+<h2> {{group_id.fio}}</h2>
+<p> Интересы: {{group_id.interesting}} </p>
+<p> День рождения:{{group_id.bithday}} </p>
+<p> Студент получает стипендию:{{group_id.is_money}}
+{% endblock %}

@@ -11,6 +11,7 @@ urlpatterns = [
     path('', index, name='home'),
     path('about/', about, name='about'),
     path('cub/', cub, name='cub'),
+    path("group/<slug:group_slug>/", group, name='group'),
     path('cat/', categorys),
     path("articles/<yyyy:year>/", year_archive),
     path('cat/<int:cat_id>/', category),
